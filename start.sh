@@ -1,10 +1,13 @@
 #!/bin/bash
 set -e
 
+# Railway uses python3, not python
+PYTHON=$(which python3 || which python)
+
 # Train models if not present (first deploy)
 if [ ! -f "backend/ml/models/hmm_regime.joblib" ]; then
   echo "Training ML models (first-time setup)..."
-  python -m backend.ml.train_models
+  $PYTHON -m backend.ml.train_models
 fi
 
 # Start FastAPI server
