@@ -16,7 +16,6 @@ dist/
 build/
 
 # ML models (large binaries — regenerate via train_models.py)
-backend/ml/models/
 
 # Node
 frontend/node_modules/
